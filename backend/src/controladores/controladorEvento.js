@@ -77,13 +77,19 @@ exports.filtrarEventos = async (req, res) => {
   try {
     const filtro = {};
 
-    // Filtrar por fecha (coincidencia parcial)
+    // Filtrar por fecha
     if (fecha) {
-      const fechaRegex = new RegExp(fecha, "i"); // Ignorar mayúsculas/minúsculas
-      filtro.fecha = { $regex: fechaRegex };
+      const fechaInicio = new Date(fecha); // Convertir la fecha a objeto Date
+      const fechaFin = new Date(fechaInicio);
+      fechaFin.setDate(fechaFin.getDate() + 1); // Añadir un día para incluir todos los eventos del día
+
+      filtro.fecha = {
+        $gte: fechaInicio, // Fecha mayor o igual a la fecha de inicio
+        $lt: fechaFin, // Fecha menor que la fecha de fin
+      };
     }
 
-    // Filtrar por ubicación (coincidencia parcial e insensible a mayúsculas/minúsculas)
+    // Filtrar por ubicación
     if (ubicacion) {
       const ubicacionRegex = new RegExp(ubicacion, "i"); // Ignorar mayúsculas/minúsculas
       filtro.ubicacion = { $regex: ubicacionRegex };

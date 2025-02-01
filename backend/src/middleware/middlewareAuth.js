@@ -11,9 +11,9 @@ const middlewareAutenticacion = (req, res, next) => {
     if (error) {
       return res.status(401).json({ mensaje: "Token inválido", error: error.message });
     }
-    req.usuario = decoded; // Agregar el usuario decodificado a req.usuario
+    req.usuario = decoded;
     console.log("Usuario decodificado:", decoded); // Depuración
-    req.usuario = decoded; // Agregar el usuario decodificado a req.usuario
+    req.usuario = decoded;
     next();
   });
 };

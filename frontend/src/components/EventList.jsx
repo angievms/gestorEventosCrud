@@ -16,6 +16,18 @@ const EventList = () => {
     descripcion: "",
   });
 
+  // Función para formatear la fecha a YYYY-MM-DD
+  const formatearFecha = (fecha) => {
+    if (!fecha) return ""; // Si no hay fecha, retorna una cadena vacía
+
+    // Convertir la fecha al formato YYYY-MM-DD
+    const [day, month, year] = fecha.split("/");
+    if (day && month && year) {
+      return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+    }
+    return fecha; // Si ya está en el formato correcto, retorna la fecha tal cual
+  };
+
   // Obtener todos los eventos del usuario autenticado
   const obtenerEventos = async () => {
     try {
@@ -29,9 +41,13 @@ const EventList = () => {
   // Filtrar eventos por fecha o ubicación
   const handleFiltrarEventos = async () => {
     try {
+      const fechaFormateada = formatearFecha(filtroFecha); // Formatear la fecha
+      const ubicacionMinusculas = filtroUbicacion.toLowerCase(); // Convertir a minúsculas
+
       const response = await apiClient.get("/eventos/filtrar", {
-        params: { fecha: filtroFecha, ubicacion: filtroUbicacion },
+        params: { fecha: fechaFormateada, ubicacion: ubicacionMinusculas },
       });
+
       setEventos(response.data);
     } catch (error) {
       console.error("Error al filtrar eventos:", error);
@@ -95,7 +111,7 @@ const EventList = () => {
           onChange={(e) => setFiltroFecha(e.target.value)}
           onKeyDown={handleKeyDown}
           className="form-control mb-2"
-          placeholder="Filtrar por fecha (YYYY-MM-DD)"
+          placeholder="Filtrar por fecha (DD/MM/YYYY)"
         />
         <input
           type="text"

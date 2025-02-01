@@ -1,4 +1,4 @@
-const Usuario = require('../modelos/modeloUsuario'); // Importa el modelo de Mongoose para usuarios
+const Usuario = require('../modelos/modeloUsuario');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
