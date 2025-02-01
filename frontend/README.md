@@ -1,8 +1,33 @@
-# React + Vite
+# Nombre del Proyecto - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es el frontend de la aplicación **[Nombre del Proyecto]**. La interfaz de usuario fue desarrollada con React y Vite, y se comunica con el backend a través de una API REST.
 
-Currently, two official plugins are available:
+## Tecnologías y Herramientas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**
+- **Vite**
+- **React Router**
+- **CSS** 
+- **Bootstrap** 
+
+## Instalación
+
+### Requisitos previos
+
+- Node.js (v14 o superior)
+- npm o yarn
+
+### Pasos para instalar
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/angievms/gestorEventosCrud.git
+
+2. Ingresa al directorio del backend: cd gestorEventosMern/backend
+
+3. Instala las dependencias: npm install
+
+4. En el archivo .env que se encuentra en la raíz del directorio backend modifica las variables según tu entorno.
+
+5. Inicializa el servidor con npm run dev.

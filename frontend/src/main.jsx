@@ -1,16 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom"; // Importa BrowserRouter
+import App from "./App";
+import './index.css'
 
-const rootElement = document.getElementById('root'); // Cambia 'app' por 'root' si es necesario
-
-if (rootElement) {
-  ReactDOM.createRoot(rootElement).render(
-    <React.StrictMode>
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter> {/* Envuelve la aplicación con BrowserRouter */}
       <App />
-    </React.StrictMode>
-  );
-} else {
-  console.error('El contenedor con id "root" no se encuentra en el HTML.');
-}
+    </BrowserRouter>
+  </React.StrictMode>
+);

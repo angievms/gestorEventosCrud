@@ -1,0 +1,275 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #535bf2;
+  }
+  
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+  
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+  
+  h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    padding-bottom: 30px;
+  }
+  
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
+    a:hover {
+      color: #747bff;
+    }
+    button {
+      background-color: #f9f9f9;
+    }
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .logo img {
+    max-width: 100px;
+    margin: 5px;
+  }
+  
+  .logo h2 {
+    color: white;
+    font-size: 24px;
+    margin: 10px;
+  }
+  
+  .input-login {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap
+  }
+  
+  .input-login label {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .input-login input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #8b0000; /* Rojo oscuro */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #a20000; /* Rojo más brillante */
+  }
+  
+  .error{
+    color: #f54e4e;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .product-page-container {
+    padding: 20px;
+  }
+  
+  .product-page-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-and-create {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-and-create input {
+    width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-and-create button {
+    padding: 10px 5px;
+    font-size: 16px;
+    background-color: #811208; /* Color azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 200px;
+  }
+  
+  .search-and-create button:hover {
+    background-color: #370905; /* Azul más oscuro */
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .product-table th,
+  .product-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .product-table tbody tr {
+    margin-bottom: 10px; /* Margen inferior para los productos creados */
+  }
+  
+  /* Estilo general para el fondo del modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que quede por encima de otros elementos */
+  }
+  
+  /* Contenedor del formulario */
+  .modal-container {
+    background-color: #3d3d3d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    width: 400px;
+    max-width: 90%; /* Responsivo */
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Título del formulario */
+  .modal-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Estilo de los inputs y textarea */
+  .modal-container input,
+  .modal-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  /* Botones del formulario */
+  .modal-container button {
+    width: 48%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .modal-container button[type="submit"] {
+    background-color: #811208;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .modal-container button[type="submit"]:hover {
+    background-color: #480a04;
+  }
+  
+  .modal-container button[type="button"] {
+    background-color: #ccc;
+    color: #333;
+    transition: background-color 0.3s;
+  }
+  
+  .modal-container button[type="button"]:hover {
+    background-color: #999;
+  }
+  
+  /* Animación de entrada */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }  

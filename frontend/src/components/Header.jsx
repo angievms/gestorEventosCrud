@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { House, PersonCircle } from "react-bootstrap-icons"; // Importamos los íconos de Bootstrap
+import { House, PersonCircle } from "react-bootstrap-icons";
 
 const Header = () => {
   const [usuario, setUsuario] = useState(null);
@@ -19,35 +19,36 @@ const Header = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("usuario");
     setUsuario(null);
-    navigate("/login");
+    navigate("/Login");
   };
 
   return (
-    <header className="bg-gray-800 text-white">
-      {/* Usamos 'px-8 py-4' para mayor separación */}
-      <nav className="container mx-auto px-8 py-4 flex justify-between items-center">
-        <Link to="/" className="text-lg font-bold flex items-center">
-          <House className="mr-2" /> {/* Ícono de la casa */}
-          <h1>My Ecommerce</h1>
+    <header className="bg-dark text-white py-3">
+      <nav className="container d-flex justify-content-between align-items-center">
+        <Link to="/" className="text-decoration-none text-white d-flex align-items-center">
+          <House className="me-3" />
+          <h1 className="h4 mb-0">Gestor de Eventos</h1>
         </Link>
-        <div className="flex space-x-4 items-center">
-          {location.pathname === "/productos" && usuario ? (
+        <div className="d-flex align-items-center">
+          {location.pathname === "/eventos" && usuario ? (
             <>
-              <div className="flex items-center space-x-2">
-                <PersonCircle className="text-gray-300" /> {/* Ícono de usuario */}
-                <span className="text-gray-300">{usuario.nombre}</span>
+              <div className="d-flex align-items-center me-3">
+                <PersonCircle className="me-2" />
+                <span>{usuario.nombre}</span>
               </div>
-              <button
-                onClick={handleLogout}
-                className="text-red-500 hover:text-red-300 ml-4"
-              >
+              <button onClick={handleLogout} className="btn btn-outline-danger">
                 Cerrar Sesión
               </button>
             </>
           ) : (
-            <Link to="/login" className="hover:text-gray-300">
+            <>
+            <Link to="/registro" className="register-link me-3">
+            Registrarse
+          </Link>
+            <Link to="/login" className="btn btn-outline-light">
               Iniciar Sesión
             </Link>
+            </>
           )}
         </div>
       </nav>

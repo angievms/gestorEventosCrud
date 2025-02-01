@@ -1,38 +1,272 @@
-.App {
+/* Estilos personalizados */
+.bg-gray-100 {
+  background-color: #f8f9fa;
+}
+
+.bg-gray-800 {
+  background-color: #343a40;
+}
+
+.text-gray-300 {
+  color: #dee2e6;
+}
+
+.text-gray-600 {
+  color: #6c757d;
+}
+
+.text-gray-800 {
+  color: #343a40;
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.vh-100 {
+  height: 100vh;
+}
+
+/* Ajustes adicionales para los íconos */
+.bi {
+  vertical-align: middle;
+}
+
+/* Estilos generales del Header */
+.header {
+  background-color: #212529;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del nav */
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+}
+
+/* Logo y enlace principal */
+nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: white; /* Cambiado a blanco para mejor contraste */
+}
+
+nav a:hover {
+  color: #93c5fd; /* Azul claro */
+}
+
+/* Íconos */
+nav svg {
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+/* Contenedor de opciones a la derecha */
+nav .user-options {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Estilos del botón de cerrar sesión */
+nav .logout-btn {
+  color: #f87171; /* Rojo */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+nav .logout-btn:hover {
+  color: #fca5a5; /* Rojo claro */
+}
+
+/* Estilos para el enlace de registro */
+nav .register-link {
+  color: #93c5fd; /* Azul claro */
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav .register-link:hover {
+  color: #60a5fa; /* Azul más oscuro */
+}
+
+/* Estilos para el componente Home */
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.home-content {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #212529;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-content p {
+  font-size: 1.2rem;
+  color: #6c757d;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home-content button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.home-content button:hover {
+  background-color: #0b5ed7;
+}
+
+/* Estilos para el componente Login y Register */
+.auth-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.auth-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #212529;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  background-color: #0d6efd;
   color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.auth-form button:hover {
+  background-color: #0b5ed7;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.auth-form .error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.auth-form .register-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.auth-form .register-link a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.auth-form .register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para el componente EventCard */
+.event-card {
+  margin-bottom: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  padding: 1.5rem;
+}
+
+.event-card h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #0d6efd;
+  margin-bottom: 1rem;
+}
+
+.event-card p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.event-card button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.event-card .edit-btn {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+}
+
+.event-card .edit-btn:hover {
+  background-color: #0b5ed7;
+}
+
+.event-card .delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.event-card .delete-btn:hover {
+  background-color: #bb2d3b;
 }
